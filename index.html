@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Teaser | Schlam Cru - Boilermaker Welder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 5px auto;
+            padding: 5px;
+            background-color: #f0f0f0;
+        }
+        .job-teaser {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid #0056b3;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .title-location {
+            flex-grow: 1;
+        }
+        .job-title {
+            color: white;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+        .location {
+            color: #e0e0e0;
+            font-size: 0.9em;
+        }
+        .content {
+            padding: 5px;
+            position: relative;
+            overflow: hidden;
+            min-height: 160px;
+        }
+        .slide {
+            display: none;
+            animation: fadeEffect 0.5s;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .nav-dots {
+            text-align: center;
+            margin-top: 2px;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #0056b3;
+        }
+        .full-ad-toggle {
+            text-align: right;
+            padding: 2px 5px;
+            background-color: #f0f0f0;
+            font-size: 0.9em;
+        }
+        .full-job-ad {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .apply-button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .apply-button:hover {
+            background-color: #003d82;
+        }
+        h2 {
+            margin: 5px 0;
+            color: #0056b3;
+            font-size: 1.1em;
+        }
+        ul {
+            margin: 3px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 2px;
+        }
+        p {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-teaser">
+        <div class="header">
+            <img src="https://i.imgur.com/Q0wFKjq.png" alt="Schlam Cru Logo" class="logo">
+            <div class="title-location">
+                <h1 class="job-title">Boilermaker Welder | WA FIFO | Mobile Plant</h1>
+                <div class="location">📍 Perth, WA (FIFO)</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="slide active">
+                <h2>Job Overview</h2>
+                <ul>
+                    <li>Up to $75/hr + Super paid on ALL hours worked</li>
+                    <li>8/6, 2/1, 2/2 rosters available</li>
+                    <li>Flights packages from your nearest capital city</li>
+                    <li>Repair and maintenance of heavy earthmoving equipment</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Key Responsibilities</h2>
+                <ul>
+                    <li>Dump truck trays and G.E.T replacements</li>
+                    <li>Grader and dozer blade repairs</li>
+                    <li>Boom and stick repairs</li>
+                    <li>Air arc gouging, crack repairs, and lancing</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Requirements</h2>
+                <ul>
+                    <li>Australian Boilermaker trade qualification</li>
+                    <li>Drivers Licence: C class or higher</li>
+                    <li>Working at Heights ticket</li>
+                    <li>Australian Citizen or Permanent Resident</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Benefits</h2>
+                <ul>
+                    <li>Competitive hourly rate with super on all hours</li>
+                    <li>Paid inductions and training</li>
+                    <li>Employee referral bonuses</li>
+                    <li>Industry's best PPE kits</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <div class="full-ad-toggle">
+            <label for="fullAdToggle">Show Full Job Ad</label>
+            <input type="checkbox" id="fullAdToggle" onclick="toggleFullAd()">
+        </div>
+        <div class="full-job-ad" id="fullJobAd">
+            <h2>Full Job Description</h2>
+            <p><strong>About Schlam Cru:</strong> Schlam Cru specialises in providing skilled tradespersons for the repair and maintenance of heavy earthmoving equipment on mine sites across WA's Pilbara and Goldfields regions.</p>
+            
+            <h3>What's in it for you:</h3>
+            <ul>
+                <li>Up to $75/hr + Super paid on ALL hours worked</li>
+                <li>8/6, 2/1, 2/2 rosters</li>
+                <li>Flights packages from your nearest capital city</li>
+                <li>Get paid for your time completing inductions and training</li>
+                <li>Employee referral bonuses</li>
+                <li>The industry's best PPE kits</li>
+                <li>A whole bunch of other perks</li>
+            </ul>
+
+            <h3>Required Experience:</h3>
+            <p>You'll need to have experience with a range of heavy earthmoving equipment repairs, such as - dump truck trays, G.E.T replacements, grader and dozer blades, boom and stick repairs, air arc gouging, crack repairs, lancing, chassis and body maintenance.</p>
+
+            <h3>Qualifications and Requirements:</h3>
+            <ul>
+                <li>Australian Boilermaker trade qualification</li>
+                <li>Drivers Licence: C class or higher</li>
+                <li>High Risk Work Licence: Forklift and EWP is beneficial</li>
+                <li>Working at Heights ticket</li>
+                <li>National Police Check</li>
+                <li>Australian Citizen or Permanent Residents ONLY</li>
+            </ul>
+
+            <p><strong>Additional Information:</strong> Got a mate that works for Schlam? Give them a call right now and ask them to refer you! Not only do we love referrals, but your mate will receive a bonus too. If you'd like to know more about Schlam, visit our website for an overview of our services - https://schlam.com/</p>
+        </div>
+        <a href="https://www.seek.com.au/job/78398259?ref=search-standalone&type=standout&origin=jobTitle#sol=945ae93dec0f9e774cbcf1b67880ada9793ab3a3" class="apply-button" target="_blank">Apply Now</a>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex-1].classList.add("active");  
+            dots[slideIndex-1].classList.add("active");
+        }
+
+        function toggleFullAd() {
+            const fullJobAd = document.getElementById("fullJobAd");
+            const checkbox = document.getElementById("fullAdToggle");
+            fullJobAd.style.display = checkbox.checked ? "block" : "none";
+        }
+
+        // Auto-slide functionality
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
